@@ -3,5 +3,5 @@
 #include <string.h>
 int *blocks[64];
 for(int i = 0; i < 63; i++) {
-  *blocks[i] = malloc(4000);
-  
+	blocks[i] = malloc(4096);
+}
