@@ -4,7 +4,7 @@
 int *iblocks[32];
 int *dblocks[64];
 typedef struct sblock {
-	char * fsname[12] = "normalFS";
+	char fsname[12];
 	int inodebitmap[32]; // bitmap of free inodes
 	int dblckbitmap[64]; // bitmap of free data blocks
 	// todo: put more stuff here later?
@@ -23,8 +23,8 @@ int main() {
 		dblocks[i] = malloc(4096);
 	}
 	for(int i = 0; i < 32; i++) {
-		dblocks[i] = malloc(256);
+		iblocks[i] = malloc(256);
 	}	
-	
+	memcpy()
 	return 0;
 }
