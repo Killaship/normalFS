@@ -4,12 +4,10 @@
 int *iblocks[32];
 int *dblocks[64];
 struct sblock {
-	int inodebitmap[32] = {0}; // bitmap of free inodes
-	int dblckbitmap[64] = {0}; // bitmap of free data blocks
-	int inodes;
-	int dblocks;
-	int itblstart;
-	int dtblstart;
+	char *info[12] = "normFS_0.01" // fs version
+	int inodebitmap[32]; // bitmap of free inodes
+	int dblckbitmap[64]; // bitmap of free data blocks
+	// todo: put more stuff here later?
 }
 struct inode {
 	char *filename[32]; // filename, including null char
@@ -24,6 +22,9 @@ int main() {
 	for(int i = 0; i < 63; i++) {
 		dblocks[i] = malloc(4096);
 	}
+	for(int i = 0; i < 32; i++) {
+		dblocks[i] = malloc(4096);
+	}	
 	
 	return 0;
 }
