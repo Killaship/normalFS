@@ -4,7 +4,7 @@
 int *iblocks[32];
 int *dblocks[64];
 struct sblock {
-	char *info[12] = "normFS_0.01"; // fs version
+	char *info = "normFS_0.01"; // fs version
 	int inodebitmap[32]; // bitmap of free inodes
 	int dblckbitmap[64]; // bitmap of free data blocks
 	// todo: put more stuff here later?
