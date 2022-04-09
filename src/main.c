@@ -8,7 +8,7 @@ struct sblock {
 	int inodebitmap[32]; // bitmap of free inodes
 	int dblckbitmap[64]; // bitmap of free data blocks
 	// todo: put more stuff here later?
-}
+};
 struct inode {
 	char *filename[32]; // filename, including null char
 	int perms; // permissions, will figure out later
@@ -17,7 +17,7 @@ struct inode {
 	int blockstart; // block file begins at
 	int timestamp; // unix timestamp of when file was created
 	int modstamp; // unix timestamp of when file was modified
-}
+};
 int main() {
 	for(int i = 0; i < 63; i++) {
 		dblocks[i] = malloc(4096);
